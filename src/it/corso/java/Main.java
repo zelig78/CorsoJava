@@ -1,10 +1,13 @@
 package it.corso.java;
 
+import it.corso.java.frames.MainFrame;
+
 import java.util.concurrent.ExecutionException;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("CORSO JAVA");
+        MainFrame mainFrame = new MainFrame();
 
         EsempioThreads esempioThreads = new EsempioThreads();
 
