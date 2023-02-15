@@ -1,4 +1,4 @@
-package it.corso.java.frames;
+package corsojava.frames;
 
 import javax.swing.*;
 import java.awt.*;
