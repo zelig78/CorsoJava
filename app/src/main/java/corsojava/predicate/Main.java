@@ -30,7 +30,7 @@ public class Main {
         System.out.println("---------------------------------");
 
         System.out.println("Utenti con nome Davide e cognome Tedesco");
-        List<Utente> trovati4 = cercaUtenti2(elenco);
+        List<Utente> trovati4 = cercaUtenti(elenco);
         for (Utente utenteTrovato : trovati4) {
             System.out.println(utenteTrovato.toString());
         }
@@ -49,7 +49,7 @@ public class Main {
     }
 
     public static List<Utente> cercaUtenti(List<Utente> utenti, Predicate<Utente> predicate) {
-        List<Utente> utentiTrovati = new ArrayList<Utente>();
+        List<Utente> utentiTrovati = new ArrayList<>();
 
         for (Utente u:utenti) {
             if (predicate.test(u)){
@@ -60,16 +60,7 @@ public class Main {
         return utentiTrovati;
     }
 
-    public static List<Utente> cercaUtenti2(List<Utente> utenti) {
-        List<Utente> utentiTrovati = new ArrayList<Utente>();
-        TestPredicate testPredicate = new TestPredicate();
-
-        for (Utente u:utenti) {
-            if (testPredicate.test(u)){
-                utentiTrovati.add(u);
-            }
-        }
-
-        return utentiTrovati;
+    public static List<Utente> cercaUtenti(List<Utente> utenti) {
+        return cercaUtenti(utenti, new TestPredicate());
     }
 }
